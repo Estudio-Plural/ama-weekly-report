@@ -1,0 +1,32 @@
+name: Weekly AMA Bot Report
+
+on:
+  schedule:
+    # Martes 13:00 UTC = 8:00 AM America/Bogota (UTC-5, sin DST)
+    - cron: "0 13 * * 2"
+  workflow_dispatch:  # permite ejecución manual desde la UI de GitHub
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate and send weekly report
+        env:
+          DATABASE_URL:       ${{ secrets.DATABASE_URL }}
+          BOT_START_DATE:     ${{ secrets.BOT_START_DATE }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPORT_RECIPIENTS:  ${{ secrets.REPORT_RECIPIENTS }}
+        run: python3 src/send_report.py

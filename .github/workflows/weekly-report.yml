@@ -2,8 +2,8 @@ name: Weekly AMA Bot Report
 
 on:
   schedule:
-    # Martes 13:00 UTC = 8:00 AM America/Bogota (UTC-5, sin DST)
-    - cron: "0 13 * * 2"
+    # Lunes 13:00 UTC = 8:00 AM America/Bogota (UTC-5, sin DST)
+    - cron: "0 13 * * 1"
   workflow_dispatch:  # permite ejecución manual desde la UI de GitHub
 
 jobs:

@@ -21,21 +21,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Diagnose env
-        env:
-          DATABASE_URL:       ${{ secrets.DATABASE_URL }}
-          BOT_START_DATE:     ${{ secrets.BOT_START_DATE }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          REPORT_RECIPIENTS:  ${{ secrets.REPORT_RECIPIENTS }}
-        run: |
-          python3 -c "
-          import os
-          for k in ['DATABASE_URL','BOT_START_DATE','OPENROUTER_API_KEY','GMAIL_USER','GMAIL_APP_PASSWORD','REPORT_RECIPIENTS']:
-              v = os.getenv(k, '')
-              print(f'{k}: len={len(v)} starts={v[:8]!r} scheme_ok={v.startswith(\"postgresql://\") if k==\"DATABASE_URL\" else \"-\"}')"
-
       - name: Generate and send weekly report
         env:
           DATABASE_URL:       ${{ secrets.DATABASE_URL }}

@@ -47,9 +47,10 @@ El reporte debe cubrir, en este orden:
 2. Participación por ciudad: cuál lideró, porcentajes, diferencias relevantes.
 3. Colegios con mayor y menor participación, con los números clave y patrones relevantes entre ciudades.
 4. Evolución del uso desde el lanzamiento: tendencia semana a semana, si hay crecimiento, caídas o estabilización. Usa los números reales.
-5. Si hay algo que llame la atención o requiera seguimiento (sin exagerar; omitir si no hay nada importante).
 
 Reglas estrictas:
+- Reporte puramente descriptivo. No interpretes, no analices, no sugieras seguimientos, no propongas acciones, no hipotetices causas. Solo describe lo que muestran los datos.
+- No incluyas un párrafo de "punto de atención", "algo llama la atención", "requiere seguimiento" ni similares. Si los datos son planos, el reporte termina plano.
 - Solo prosa. Ningún encabezado, bullet, numeración ni formato markdown.
 - Usa los números reales de los datos. No inventes ni redondees innecesariamente.
 - No menciones salones a menos que haya algo verdaderamente destacable.

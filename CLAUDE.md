@@ -20,7 +20,7 @@ ama-weekly-report/
 └── src/
     ├── send_report.py    # entry point: rango semana anterior, arma email, SMTP Gmail 465 SSL
     ├── report_bot.py     # genera Excel con 4 hojas (leyenda + Ciudad + Colegio + Salón)
-    ├── agent_report.py   # build_prompt + call_llm (OpenRouter, default x-ai/grok-4)
+    ├── agent_report.py   # build_prompt + call_llm (OpenRouter, default x-ai/grok-4.3)
     └── db.py             # SQLAlchemy + pg8000, queries al schema ama de Supabase
 ```
 

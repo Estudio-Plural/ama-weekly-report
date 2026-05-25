@@ -21,7 +21,7 @@ import db
 
 load_dotenv()
 
-DEFAULT_MODEL = "x-ai/grok-4"
+DEFAULT_MODEL = "x-ai/grok-4.3"
 
 
 # ── LLM ───────────────────────────────────────────────────────────────────────
